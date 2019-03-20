@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="button" >aa</div>
+    <div id="text">nihaoa </div>
+</body>
+</html>
+<script>
+
+this.num = 9; 
+var mymodule = {
+  num: 81,
+  getNum: function() { return this.num; }
+};
+ 
+mymodule.getNum(); // 81
+console.log(mymodule.getNum())
+ 
+var getNum = mymodule.getNum;
+getNum(); // 9, 因为在这个例子中，"this"指向全局对象
+console.log(getNum())
+// 创建一个'this'绑定到module的函数
+var boundGetNum = getNum.bind(mymodule);
+console.log(this)
+</script>
